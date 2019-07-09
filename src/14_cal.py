@@ -25,17 +25,17 @@ from datetime import datetime
 
 
 
-x = input("Please Enter month,year: ").split(',')
-print(sys.argv)
+cal = calendar.TextCalendar()
+d = datetime.now()
 
-if len(sys.argv) < 1:
-  print(calendar.month(2019, 5))
-
+if len(sys.argv) == 1:
+    print(cal.prmonth(d.year, d.month))
 elif len(sys.argv) == 2:
-  print(calendar.month(2019, int(sys.argv[1])))
-
+    month = int(sys.argv[1])
+    print(cal.prmonth(d.year, month))
 elif len(sys.argv) == 3:
-  print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
-
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    print(cal.prmonth(year, month))
 else:
-  print("please enter the correct month and year with comma between each value")
+    print("first argument is the month and the second is a year")
