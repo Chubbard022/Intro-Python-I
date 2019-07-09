@@ -12,6 +12,7 @@ import sys
 for args in sys.argv:
     print(args)
 
+
 #----------------------------------------------------------------------
 # Print out the OS platform you're using:
 
@@ -20,7 +21,7 @@ print(sys.platform)
 
 #----------------------------------------------------------------------
 # Print out the version of Python you're using:
-# YOUR CODE HERE
+print(sys.version)
 
 #----------------------------------------------------------------------
 
