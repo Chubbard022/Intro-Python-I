@@ -23,22 +23,19 @@ import sys
 import calendar
 from datetime import datetime
 
-	
-current_date= datetime.now()
-year = current_date.year
-month = current_date.month
 
-args = sys.argv[1:]
 
-if args:
-    month = int(args[0])
-    if len(args) > 1:
-        year = int(args[0])
-        month = int(args[1])
+x = input("Please Enter month,year: ").split(',')
+print(sys.argv)
 
-if len(args) > 2:
-    print("Too many arguments. Supply arguments like YYYY MM.")
-elif month < 1 or 12 < month:
-    print("Month must be 1 to 12")
+if len(sys.argv) < 1:
+  print(calendar.month(2019, 5))
+
+elif len(sys.argv) == 2:
+  print(calendar.month(2019, int(sys.argv[1])))
+
+elif len(sys.argv) == 3:
+  print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+
 else:
-    print(calendar.month(year, month)) 
+  print("please enter the correct month and year with comma between each value")
